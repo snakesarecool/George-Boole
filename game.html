@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game</title>
+    
+</head>
+<body>
+
+    <div class="navigation">
+        <a href="index.html">HOME</a>
+        <a href="game.html">Want to Play a Game?</a>
+    </div>
+
+    <h2>LESSON 2</h2>
+    <p>So what ways can we make buttons look fancy?</p>
+
+    <!-- See the style below. This is often placed in the CSS file.-->
+    <!-- We will place it here in the style tag to keep everything together. -->
+    <style>
+        .button{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 8px; 
+        }
+
+        button:hover {
+            background-color: white; 
+            border: 2px solid #4CAF50; 
+            color: black; 
+        }
+    </style>
+    <button class="button">Fancy Button</button>
+
+    <style>
+        .button2{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+        }
+    </style>
+    <!--<p>Let's begin using Javascript to update our button</p>
+    <p>Your Fancy Button from before has been reset using the .button2 class</p>
+    <p>The button now has an action, changing color when you click it.</p>-->
+    
+    <button class="button2" id="demo" 
+            onclick="document.getElementById('demo').setAttribute('style','background-color:rgb(210,50,35);')">
+        Click Me!
+    </button>
+
+    <style>
+        .quizButton{
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            display:inline-block; 
+        }
+
+        .question{
+            font-size: 24px;
+        }
+    </style>
+
+    <p class="question" id='question'>Question Here?</p>
+    <button class="quizButton">Answer One</button>
+    <button class="quizButton">Answer Two</button>
+    <button class="quizButton">Answer Three</button>
+    <button class="quizButton">Answer Four</button>
+
+    <!--<h3>Try It: Make a Question and List of Answers.</h3>
+    <p>In the Javascript file, create a variable for the question.</p>
+    <pre>var question = "Which of the following is a school color?;</pre>
+    <p>&nbsp;</p>
+    <p>Update the question on the HTML page by adding the following script:</p>
+    <pre>document.getElementByClassName("question").innerHTML = question;</pre>-->
+
+    <script src="script.js"></script>
+</body>
+</html>
