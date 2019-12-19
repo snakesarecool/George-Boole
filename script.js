@@ -9,7 +9,7 @@ var question = ["What year was George Boole born?",
                 "Boole founded a new branch of mathematics called Invariant Theory, later to inspire Einstein in which year?", 
                 "What year did George Boole die?"]; 
 
-var correct = []; //The first answer is at position 0, the last is at 3.
+var correct = [2, 2, 1, 2, 1, 1, 1,   1, 2,  3 ]; 
 
 var answers = [ ['1799', '1800', '1815', '1840'],
                 ['1825', '1830', '1847', '1864'],
@@ -26,23 +26,25 @@ var questionNum = 0;
 
 var answerButtons = document.getElementsByClassName("quizButton"); 
 
-for(var spot=0; spot<answers[questionNum].length; spot++)
-{
-    answerButtons[spot].innerHTML = answers[questionNum][spot]; 
+function setButtons() {
+    for(var spot=0; spot<answers[questionNum].length; spot++)
+    {
+        answerButtons[spot].innerHTML = answers[questionNum][spot]; 
 
-    answerButtons[spot].addEventListener('click', function() {
-        disableAll(); 
-        if(this.innerHTML == answers[correct[questionNum]]) {
-            this.setAttribute('style','background-color:rgb(76, 175, 80);')
-        }else {
-            this.setAttribute('style','background-color:rgb(210, 50, 35);')
-           
-        }
-    }); 
+        answerButtons[spot].addEventListener('click', function() {
+            disableAll(); 
+            if(this.innerHTML == answers[questionNum][correct[questionNum]]) {
+                this.setAttribute('style','background-color:rgb(76, 175, 80);'); 
+            }else {
+                this.setAttribute('style','background-color:rgb(210, 50, 35);'); 
+            
+            }
+        }); 
 
+    }
+
+    document.getElementById("question").innerHTML = question[questionNum]; 
 }
-
-document.getElementById("question").innerHTML = question[questionNum]; 
 
 function changeColor() {
 document.getElementById('demo2').setAttribute('style','background-color:rgb(210,50,35);')
@@ -53,3 +55,19 @@ function disableAll() {
         answerButtons[num].setAttribute('disabled', true); 
     }
 }
+function resetStyle() {
+    for(var num=0; num<answerButtons.length; num++) {
+        this.setAttribute('style','background-color:white;'); 
+        answerButtons[num].setAttribute('disabled', false); 
+    }
+}
+
+function nextQuestion() {
+    questionNum = questionNum + 1; 
+    setButtons(); 
+    resetStyle(); 
+}
+
+setButtons(); 
+
+//document.getElementById('resetButton').addEventListener('click', nextQuestion());

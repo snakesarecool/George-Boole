@@ -2,13 +2,18 @@
 <html>
 <head>
     <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
 
     <div class="navigation">
-        <a href="index.html">HOME</a>
-        <a href="game.html">Quiz Time!</a>
+        <ul>
+          <a href="index.html">HOME</a>
+          <a href="Boolean.html">About Boolean</a>
+          <a href="game.html">Want to Play a Game?</a>
+        </ul>
+    
     </div>
 
    
@@ -29,6 +34,10 @@
     <button class="quizButton">Answer Two</button>
     <button class="quizButton">Answer Three</button>
     <button class="quizButton">Answer Four</button>
+
+    <p></p>
+
+    <div id="reset"><button id="resetButton" onclick="nextQuestion();">Next</button></div>
 
     <!--<h3>Try It: Make a Question and List of Answers.</h3>
     <p>In the Javascript file, create a variable for the question.</p>
