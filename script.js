@@ -58,7 +58,7 @@ function disableAll() {
 function resetStyle() {
     for(var num=0; num<answerButtons.length; num++) {
         answerButtons[num].setAttribute('style','background-color: white;'); 
-        answerButtons[num].setAttribute('enabled', true); 
+        answerButtons[num].disabled= false; 
     }
 }
 
